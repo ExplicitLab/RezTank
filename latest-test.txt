@@ -1,4 +1,4 @@
-reztank.test.v1
-https://github.com/ExplicitLab/RezTank/releases/download/reztank.test.v1/utank2-i.dll
-1ea03bda5155898d54b17ca98b3f3af81bccce1e9351cc33a8b09003b8c52a41
-RezTank test build v1 - first community build (pre-release). Details: https://github.com/ExplicitLab/RezTank
+   reztank.test.v2
+   https://github.com/ExplicitLab/RezTank/releases/download/reztank.test.v2/utank2-i.dll
+   f9234a7b91cdc7b5a1503f5d27d1b46a710009410fefb270802483206da5fc31
+   RezTank test build v2 - verifies the GitHub update channel. No functional changes from v1.
