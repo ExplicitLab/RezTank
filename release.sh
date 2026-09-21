@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 # RezTank release helper — run from Git Bash inside your local clone of the RezTank repo.
 #
-#   ./release.sh test    2.01 "/c/Users/Bart/Asheron's Call/Vtank Fixes/reztank-repo/test.v2.01/utank2-i.dll" "What changed in this build"
-#   ./release.sh release 2.01 "/path/to/utank2-i.dll" "First public release"
+#   ./release.sh test    2.03 "/c/Users/Bart/Asheron's Call/Vtank Fixes/reztank-repo/test.v2.03/RezTank.Test.v2.03.dll" "What changed in this build"
+#   ./release.sh release 1    "/path/to/RezTank.v1.dll" "First public release"
+#
+# The release asset is named after the build (RezTank.Test.v2.03.dll); it is installed as utank2-i.dll on players' machines.
 #
 # Build ids: test = RezTank.Test.v2.01, v2.02, ...   release = RezTank.v1, v1.01, ...  (the updater compares ids exactly).
 #
@@ -20,7 +22,7 @@ set -euo pipefail
 CHANNEL="${1:-}"; NUM="${2:-}"; DLL="${3:-}"; NOTES="${4:-}"
 REPO="ExplicitLab/RezTank"
 
-usage() { echo "usage: $0 <test|release> <version e.g. 2.01> <path-to-utank2-i.dll> [notes]"; exit 1; }
+usage() { echo "usage: $0 <test|release> <version e.g. 2.03> <path-to-dll> [notes]"; exit 1; }
 [[ -z "$CHANNEL" || -z "$NUM" || -z "$DLL" ]] && usage
 [[ "$CHANNEL" != "test" && "$CHANNEL" != "release" ]] && usage
 [[ -f "$DLL" ]] || { echo "DLL not found: $DLL"; exit 1; }
@@ -41,21 +43,22 @@ if ! tr -d '\000' < "$DLL" | grep -aq "$BUILD"; then   # strings inside .NET DLL
 fi
 
 SHA=$(sha256sum "$DLL" | cut -d' ' -f1)
-URL="https://github.com/$REPO/releases/download/$BUILD/utank2-i.dll"
+ASSET="$BUILD.dll"
+URL="https://github.com/$REPO/releases/download/$BUILD/$ASSET"
 
 echo "== Build:    $BUILD"
 echo "== Manifest: $MANIFEST"
 echo "== SHA-256:  $SHA"
 echo "== Notes:    $NOTES"
 
-# Make sure we publish under the exact asset name the manifest points at.
-TMPDIR_=$(mktemp -d); cp "$DLL" "$TMPDIR_/utank2-i.dll"
+# Publish under the exact asset name the manifest points at (RezTank.Test.v2.03.dll etc).
+TMPDIR_=$(mktemp -d); cp "$DLL" "$TMPDIR_/$ASSET"
 
 git checkout -q main
 git pull -q --ff-only
 
 echo "== Creating GitHub release $BUILD ..."
-gh release create "$BUILD" "$TMPDIR_/utank2-i.dll" --repo "$REPO" --title "$TITLE" --notes "$NOTES" $PRE
+gh release create "$BUILD" "$TMPDIR_/$ASSET" --repo "$REPO" --title "$TITLE" --notes "$NOTES" $PRE
 rm -rf "$TMPDIR_"
 
 echo "== Updating $MANIFEST ..."

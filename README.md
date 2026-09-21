@@ -16,7 +16,11 @@ newer test builds, release builds only to newer releases.
 2. Open your Virindi Tank folder (the one containing `utank2-i.dll`, usually
    `C:\Games\VirindiPlugins\VirindiTank\`).
 3. Rename the existing `utank2-i.dll` to `utank2-i.dll.orig` (your backup).
-4. Download `utank2-i.dll` from the [releases page](https://github.com/ExplicitLab/RezTank/releases) (newest build) into that folder.
+4. Download the newest `RezTank.*.dll` from the [releases page](https://github.com/ExplicitLab/RezTank/releases)
+   into that folder and rename it to `utank2-i.dll` (the file name Decal is registered to load).
+   From then on RezTank installs updates under their own versioned names (`RezTank.Test.v2.05.dll`, ...)
+   and re-points Decal at them, as long as the game runs with administrator rights; without those
+   rights it simply replaces the file in place.
 5. Start the game and make sure Virindi Tank is enabled in the Decal window.
 
 The VTank window title will read `Virindi Tank v.1.0.0.0 [reztank.test.v1]`, and after login chat
@@ -25,8 +29,9 @@ shows `Virindi Tank reztank.test.v1 (community rebuild) loaded. Profiles: <folde
 ## Updates
 
 RezTank checks this repository at login. When a newer build is published it downloads it,
-verifies it, and installs it for the next game start (the previous build is kept as
-`utank2-i.dll.prev`). To receive only the chat notice and install by hand, create an empty
+verifies it, and installs it for the next game start (the previous build is kept next to it
+as `<old name>.prev`; delete that once you are happy with the new build). Right-click the
+installed DLL -> Properties -> Details to see which build it is. To receive only the chat notice and install by hand, create an empty
 file named `noautoupdate.txt` in the Virindi Tank folder.
 
 Virindi Automatic Updates Filter will not overwrite RezTank with stock Virindi Tank.
@@ -61,22 +66,22 @@ One-time setup in Git Bash:
 
 Each release:
 
-    ./release.sh test 2.01 "/c/path/to/utank2-i.dll" "What changed"      # pre-release RezTank.Test.v2.01
-    ./release.sh release 1 "/c/path/to/utank2-i.dll" "First release"     # release RezTank.v1
+    ./release.sh test 2.03 "/c/path/to/RezTank.Test.v2.03.dll" "What changed"   # pre-release RezTank.Test.v2.03
+    ./release.sh release 1 "/c/path/to/RezTank.v1.dll" "First release"         # release RezTank.v1
 
 The script computes the checksum, creates the release with the DLL attached, rewrites the
 channel manifest and pushes it. Players pick it up at their next login.
 
 ### Manual (what the script does)
 
-1. Build the new `utank2-i.dll` with the build id bumped (`RezTank.Test.v2.01` for a pre-release,
+1. Build the new DLL with the build id bumped (`RezTank.Test.v2.01` for a pre-release,
    `RezTank.v1` for a release).
 2. Create a GitHub release tagged exactly with the build id, mark test builds as pre-release,
-   and attach `utank2-i.dll` as an asset.
+   and attach the DLL named after the build (`RezTank.Test.v2.03.dll`) as an asset.
 3. Edit the channel manifest on `main` — `latest-test.txt` for test builds, `latest.txt` for
    releases:
    - line 1: the new build id
-   - line 2: `https://github.com/ExplicitLab/RezTank/releases/download/<build id>/utank2-i.dll`
+   - line 2: `https://github.com/ExplicitLab/RezTank/releases/download/<build id>/<build id>.dll`
      (tag-specific link; the `releases/latest` permalink skips pre-releases, so don't use it)
    - line 3: SHA-256 of the DLL (optional but recommended)
    - remaining lines: short notes shown in chat
