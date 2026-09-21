@@ -1,4 +1,4 @@
-RezTank.Test.v2.01
-https://github.com/ExplicitLab/RezTank/releases/download/RezTank.Test.v2.01/utank2-i.dll
-92329e2a085f3b3b1c590befc0f5b3f7e0eb75b9d2a261068d3f6a08c0bb73a3
-Profiles can live in sub-folders; wider profile dropdowns
+RezTank.Test.v2.02
+https://github.com/ExplicitLab/RezTank/releases/download/RezTank.Test.v2.02/utank2-i.dll
+a4119a108f5d3db5b5dbd839862112bb24293f27074e9284041342d8b3c32c03
+Profile dropdowns browse folders
