@@ -1,4 +1,4 @@
-RezTank.Test.v2.08
-https://github.com/ExplicitLab/RezTank/releases/download/RezTank.Test.v2.08/RezTank.Test.v2.08.dll
-d4829ee4b860a2658871b230d21a2fc90425842eb72eb1a20e17dab0db73625e
-Hotfix: restore assembly version 1.0.0.0 for UtilityBelt compatibility
+RezTank.Test.v2.09
+https://github.com/ExplicitLab/RezTank/releases/download/RezTank.Test.v2.09/RezTank.Test.v2.09.dll
+0e54ea99b35072e965287b92d5916e1dee7177943ccf9486ffcabc79f6c0f0b5
+Hotfix: assembly version 1.0.0.0 for UtilityBelt; Decal shows RezTank (Test)
