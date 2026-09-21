@@ -1,4 +1,4 @@
-   reztank.test.v2
-   https://github.com/ExplicitLab/RezTank/releases/download/reztank.test.v2/utank2-i.dll
-   f9234a7b91cdc7b5a1503f5d27d1b46a710009410fefb270802483206da5fc31
-   RezTank test build v2 - verifies the GitHub update channel. No functional changes from v1.
+RezTank.Test.v2.01
+https://github.com/ExplicitLab/RezTank/releases/download/RezTank.Test.v2.01/utank2-i.dll
+92329e2a085f3b3b1c590befc0f5b3f7e0eb75b9d2a261068d3f6a08c0bb73a3
+Profiles can live in sub-folders; wider profile dropdowns
