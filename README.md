@@ -4,10 +4,10 @@ A community rebuild of the Virindi Tank plugin for Asheron's Call (Decal). It is
 drop-in replacement for `utank2-i.dll`: same file name, same plugin identity, same
 dependencies, so Decal, VTClassic, UtilityBelt and VirindiHUDs keep working unchanged.
 
-Current test build: **reztank.test.v1** (pre-release). No public release yet.
+Current test build: **reztank.test.v2** (pre-release). Next builds use the `RezTank.Test.v2.01` format. No public release yet.
 
-Build names: test builds are `reztank.test.v#` (pre-releases, update channel `latest-test.txt`);
-release builds are `reztank.v#` (update channel `latest.txt`). Test builds only ever update to
+Build names: test builds are `RezTank.Test.v2.01`, `v2.02`, … (pre-releases, update channel
+`latest-test.txt`); release builds are `RezTank.v1`, `v1.01`, … (update channel `latest.txt`). Test builds only ever update to
 newer test builds, release builds only to newer releases.
 
 ## Install
@@ -50,8 +50,27 @@ value `ProfilePath` = `<your VirindiTank folder>\` under
 
 ## Releasing a new build (maintainer notes)
 
-1. Build the new `utank2-i.dll` with the build id bumped (`reztank.test.v2` for a pre-release,
-   `reztank.v1` for a release).
+### Scripted (recommended)
+
+One-time setup in Git Bash:
+
+    winget install GitHub.cli          # or download from https://cli.github.com
+    gh auth login                      # browser login, pick HTTPS
+    git clone https://github.com/ExplicitLab/RezTank.git
+    cd RezTank
+
+Each release:
+
+    ./release.sh test 2.01 "/c/path/to/utank2-i.dll" "What changed"      # pre-release RezTank.Test.v2.01
+    ./release.sh release 1 "/c/path/to/utank2-i.dll" "First release"     # release RezTank.v1
+
+The script computes the checksum, creates the release with the DLL attached, rewrites the
+channel manifest and pushes it. Players pick it up at their next login.
+
+### Manual (what the script does)
+
+1. Build the new `utank2-i.dll` with the build id bumped (`RezTank.Test.v2.01` for a pre-release,
+   `RezTank.v1` for a release).
 2. Create a GitHub release tagged exactly with the build id, mark test builds as pre-release,
    and attach `utank2-i.dll` as an asset.
 3. Edit the channel manifest on `main` — `latest-test.txt` for test builds, `latest.txt` for
