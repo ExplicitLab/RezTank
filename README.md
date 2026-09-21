@@ -4,7 +4,11 @@ A community rebuild of the Virindi Tank plugin for Asheron's Call (Decal). It is
 drop-in replacement for `utank2-i.dll`: same file name, same plugin identity, same
 dependencies, so Decal, VTClassic, UtilityBelt and VirindiHUDs keep working unchanged.
 
-Current build: **mod.1**
+Current test build: **reztank.test.v1** (pre-release). No public release yet.
+
+Build names: test builds are `reztank.test.v#` (pre-releases, update channel `latest-test.txt`);
+release builds are `reztank.v#` (update channel `latest.txt`). Test builds only ever update to
+newer test builds, release builds only to newer releases.
 
 ## Install
 
@@ -12,11 +16,11 @@ Current build: **mod.1**
 2. Open your Virindi Tank folder (the one containing `utank2-i.dll`, usually
    `C:\Games\VirindiPlugins\VirindiTank\`).
 3. Rename the existing `utank2-i.dll` to `utank2-i.dll.orig` (your backup).
-4. Download `utank2-i.dll` from the [latest release](https://github.com/ExplicitLab/RezTank/releases/latest) into that folder.
+4. Download `utank2-i.dll` from the [releases page](https://github.com/ExplicitLab/RezTank/releases) (newest build) into that folder.
 5. Start the game and make sure Virindi Tank is enabled in the Decal window.
 
-The VTank window title will read `Virindi Tank v.1.0.0.0 [mod.1]`, and after login chat
-shows `Virindi Tank mod.1 (community rebuild) loaded. Profiles: <folder>`.
+The VTank window title will read `Virindi Tank v.1.0.0.0 [reztank.test.v1]`, and after login chat
+shows `Virindi Tank reztank.test.v1 (community rebuild) loaded. Profiles: <folder>`.
 
 ## Updates
 
@@ -29,7 +33,7 @@ Virindi Automatic Updates Filter will not overwrite RezTank with stock Virindi T
 
 ## Changes vs. stock Virindi Tank
 
-### mod.1
+### reztank.test.v1
 - Startup no longer crashes when Decal's `ProfilePath` registry value is missing. Profiles
   are read from `ProfilePath` if it is set and the folder exists, otherwise from the folder
   the DLL is in.
@@ -46,12 +50,15 @@ value `ProfilePath` = `<your VirindiTank folder>\` under
 
 ## Releasing a new build (maintainer notes)
 
-1. Build the new `utank2-i.dll` (build id bumped, e.g. `mod.2`).
-2. Create a GitHub release and attach `utank2-i.dll` as an asset (the asset name must stay
-   exactly `utank2-i.dll` so the `releases/latest/download/utank2-i.dll` link keeps working).
-3. Edit `latest.txt` on `main`:
-   - line 1: the new build id (`mod.2`)
-   - line 2: `https://github.com/ExplicitLab/RezTank/releases/latest/download/utank2-i.dll`
+1. Build the new `utank2-i.dll` with the build id bumped (`reztank.test.v2` for a pre-release,
+   `reztank.v1` for a release).
+2. Create a GitHub release tagged exactly with the build id, mark test builds as pre-release,
+   and attach `utank2-i.dll` as an asset.
+3. Edit the channel manifest on `main` — `latest-test.txt` for test builds, `latest.txt` for
+   releases:
+   - line 1: the new build id
+   - line 2: `https://github.com/ExplicitLab/RezTank/releases/download/<build id>/utank2-i.dll`
+     (tag-specific link; the `releases/latest` permalink skips pre-releases, so don't use it)
    - line 3: SHA-256 of the DLL (optional but recommended)
    - remaining lines: short notes shown in chat
 4. Players on older builds see the notice at their next login and the DLL installs itself.
