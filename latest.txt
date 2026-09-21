@@ -1,4 +1,4 @@
 mod.1
-https://github.com/ExplicitLab/RezTank/releases/latest/download/utank2-i.dll
+https://github.com/ExplicitLab/RezTank/releases/download/mod.1/utank2-i.dll
 d4d39356b11fc4f866b9510215c38d134bca821047406eebb506a4c6d31665ca
 RezTank mod.1 - first community build. Details: https://github.com/ExplicitLab/RezTank
