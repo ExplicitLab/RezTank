@@ -1,4 +1,4 @@
-RezTank.Test.v2.09
-https://github.com/ExplicitLab/RezTank/releases/download/RezTank.Test.v2.09/RezTank.Test.v2.09.dll
-0e54ea99b35072e965287b92d5916e1dee7177943ccf9486ffcabc79f6c0f0b5
-Hotfix: assembly version 1.0.0.0 for UtilityBelt; Decal shows RezTank (Test)
+RezTank.Test.v2.10
+https://github.com/ExplicitLab/RezTank/releases/download/RezTank.Test.v2.10/RezTank.Test.v2.10.dll
+4f215e3cb75065c2db97e28d989372d1d30c9bf0e5e831d3c199b59a58673085
+Ignore stale ProfilePath; UtilityBelt fix; Decal display name
