@@ -1,4 +1,4 @@
-RezTank.Test.v2.10
-https://github.com/ExplicitLab/RezTank/releases/download/RezTank.Test.v2.10/RezTank.Test.v2.10.dll
-4f215e3cb75065c2db97e28d989372d1d30c9bf0e5e831d3c199b59a58673085
-Ignore stale ProfilePath; UtilityBelt fix; Decal display name
+RezTank.Test.v2.11
+https://github.com/ExplicitLab/RezTank/releases/download/RezTank.Test.v2.11/RezTank.Test.v2.11.dll
+24ad807e5a3a77456d55fb652a478d3fd0c88bf5298981a20c508f708362c84a
+Stale ProfilePath detection ignores per-character files
