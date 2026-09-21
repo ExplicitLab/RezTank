@@ -1,4 +1,4 @@
-RezTank.Test.v2.02
-https://github.com/ExplicitLab/RezTank/releases/download/RezTank.Test.v2.02/utank2-i.dll
-a4119a108f5d3db5b5dbd839862112bb24293f27074e9284041342d8b3c32c03
-Profile dropdowns browse folders
+RezTank.Test.v2.07
+https://github.com/ExplicitLab/RezTank/releases/download/RezTank.Test.v2.07/RezTank.Test.v2.07.dll
+44370a923e840465f271e20e34d12d414cc94fbba06255a4ca240bed8e3f4353
+Versioned installs, Decal name, folder browsing, version 2.7.0.0
