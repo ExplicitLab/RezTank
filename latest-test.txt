@@ -1,4 +1,4 @@
-RezTank.Test.v2.17
-https://github.com/ExplicitLab/RezTank/releases/download/RezTank.Test.v2.17/RezTank.Test.v2.17.dll
-b52d4dfb9b4952a5c5ed334cf1a077f1a794f231603f5c4c740a12b519670e21
-Monsters tab: Dmg type dropdown opens from the top, no jump
+RezTank.Test.v2.19
+https://github.com/ExplicitLab/RezTank/releases/download/RezTank.Test.v2.19/RezTank.Test.v2.19.dll
+4483b5c8ba46c9ffcbc76a0057d0e28d6ceabd511c8e6f26dd790616d2a1cc3c
+Self-heals dead Decal world objects (COM/RCW errors no longer stop the macro)
