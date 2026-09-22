@@ -37,7 +37,9 @@ fi
 [[ -z "$NOTES" ]] && NOTES="$TITLE"
 
 # Sanity: the DLL must have been built with this exact build id baked in.
-if ! tr -d '\000' < "$DLL" | grep -aq "$BUILD"; then   # strings inside .NET DLLs are UTF-16, so drop the NUL bytes first
+# .NET stores the id as UTF-16 (a NUL after every character); build a byte pattern "R.e.z..." and search with LC_ALL=C.
+PAT=$(printf '%s' "$BUILD" | sed 's/\(.\)/\1./g')
+if ! LC_ALL=C grep -aq "$PAT" "$DLL" && ! tr -d '\000' < "$DLL" | grep -aq "$BUILD"; then
   echo "WARNING: '$BUILD' not found inside $DLL — was it built with that build id?"
   read -rp "Continue anyway? [y/N] " yn; [[ "$yn" == "y" || "$yn" == "Y" ]] || exit 1
 fi
