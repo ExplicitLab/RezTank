@@ -1,4 +1,4 @@
-RezTank.Test.v2.12
-https://github.com/ExplicitLab/RezTank/releases/download/RezTank.Test.v2.12/RezTank.Test.v2.12.dll
-215c68db3e982f6d4454e36357afeeb1dc218efacf963033a53f8e5adbf4ea27
-Monsters tab: dropdown editor for Dmg/Ex.Vuln/Weapon/Offhand/PetDmg
+RezTank.Test.v2.13
+https://github.com/ExplicitLab/RezTank/releases/download/RezTank.Test.v2.13/RezTank.Test.v2.13.dll
+3a679148d5600052efe5e4577bd7384844126300b60aef34b0d810eaae2aa5ea
+Monsters tab: dropdowns open in place on the Dmg/Ex.Vuln/Weapon/Offhand/PetDmg cells
