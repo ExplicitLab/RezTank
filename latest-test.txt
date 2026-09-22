@@ -1,4 +1,4 @@
-RezTank.Test.v2.15
-https://github.com/ExplicitLab/RezTank/releases/download/RezTank.Test.v2.15/RezTank.Test.v2.15.dll
-480ffd7a4236c819b5d23dc43a7e26fe3536e8a8120ebdb0bba55a8e1b64c975
-Monsters tab dropdown: one-step open, column-sized, auto-hides
+RezTank.Test.v2.16
+https://github.com/ExplicitLab/RezTank/releases/download/RezTank.Test.v2.16/RezTank.Test.v2.16.dll
+29c13143678ad621e076043b280a77c7dde5354af6b647b417a718756769a6a7
+Monsters tab dropdown: no flash on close
