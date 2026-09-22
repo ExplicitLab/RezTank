@@ -1,4 +1,4 @@
-RezTank.Test.v2.16
-https://github.com/ExplicitLab/RezTank/releases/download/RezTank.Test.v2.16/RezTank.Test.v2.16.dll
-29c13143678ad621e076043b280a77c7dde5354af6b647b417a718756769a6a7
-Monsters tab dropdown: no flash on close
+RezTank.Test.v2.17
+https://github.com/ExplicitLab/RezTank/releases/download/RezTank.Test.v2.17/RezTank.Test.v2.17.dll
+b52d4dfb9b4952a5c5ed334cf1a077f1a794f231603f5c4c740a12b519670e21
+Monsters tab: Dmg type dropdown opens from the top, no jump
