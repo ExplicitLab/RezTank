@@ -1,4 +1,4 @@
-RezTank.Test.v2.11
-https://github.com/ExplicitLab/RezTank/releases/download/RezTank.Test.v2.11/RezTank.Test.v2.11.dll
-24ad807e5a3a77456d55fb652a478d3fd0c88bf5298981a20c508f708362c84a
-Stale ProfilePath detection ignores per-character files
+RezTank.Test.v2.12
+https://github.com/ExplicitLab/RezTank/releases/download/RezTank.Test.v2.12/RezTank.Test.v2.12.dll
+215c68db3e982f6d4454e36357afeeb1dc218efacf963033a53f8e5adbf4ea27
+Monsters tab: dropdown editor for Dmg/Ex.Vuln/Weapon/Offhand/PetDmg
